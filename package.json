@@ -1,0 +1,16 @@
+{
+  "name": "s4ntest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "DroneController.js",
+  "scripts": {
+    "start": "node DroneController.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "William Salazar",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.12.1"
+  }
+}
