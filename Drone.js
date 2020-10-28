@@ -21,41 +21,40 @@ module.exports = class Drone {
   }
 
   async stepForward() {
-    if (this.actualDelivery == null || this.actualDelivery.length == 0) {
-      this.actualDelivery = this.deliveryRoutes.shift().split('');
-    }
+    while (this.deliveryRoutes || this.deliveryRoutes.length > 0) {
+      if (this.actualDelivery == null || this.actualDelivery.length == 0) {
+        this.actualDelivery = this.deliveryRoutes.shift().split('');
+      }
 
-    if (this.actualMove == null) {
-      this.actualMove = this.actualDelivery.shift();
-    }
+      if (this.actualMove == null) {
+        this.actualMove = this.actualDelivery.shift();
+      }
 
-    if (!this.findDirection(this.actualMove)){
-      if (this.direction === DIRECTIONS.NORTH) {
-        this.y++;
+      if (!this.findDirection(this.actualMove)) {
+        if (this.direction == DIRECTIONS.NORTH) {
+          this.y++;
+        }
+        else if (this.direction == DIRECTIONS.EAST) {
+          this.x++;
+        }
+        else if (this.direction == DIRECTIONS.SOUTH) {
+          this.y--;
+        }
+        else if (this.direction == DIRECTIONS.WEST) {
+          this.x--;
+        }
       }
-      else if (this.direction === DIRECTIONS.EAST) {
-        this.x++;
-      }
-      else if (this.direction === DIRECTIONS.SOUTH) {
-        this.y--;
-      }
-      else {
-        this.x--;
-      }
-    }
-    
-    this.actualMove = null;
 
-    if(this.actualDelivery == null || this.actualDelivery.length == 0){
-      console.log("Position: ",this.x, this.y, this.direction);
-      if(this.deliveryRoutes == null || this.deliveryRoutes.length == 0){
-        this.goBackHome();
+      this.actualMove = null;
+
+      if (this.actualDelivery == null || this.actualDelivery.length == 0) {
+        console.log("Position: ", this.x, this.y, this.direction);
+        if (this.deliveryRoutes == null || this.deliveryRoutes.length == 0) {
+          this.goBackHome();
+          break;
+        }
       }
     }
-    else{
-      console.log('Found deliveries: ', this.actualDelivery);
-    }
-
   }
 
   findDirection(actualMove) {

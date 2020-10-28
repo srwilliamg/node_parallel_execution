@@ -15,8 +15,8 @@ try {
   );
 
   loadedDeliveryRoutes.then(res => {
-    Drones.map( v => {
-      v.stepForward();
+    Drones.map(async v => {
+      await v.stepForward();        
     });
   });
 

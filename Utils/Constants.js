@@ -11,6 +11,6 @@ Constants.directions = {
 
 Constants.movement = {
   FORWARD: 'A',
-  RIGHT: 'R',
-  LEFT: 'L'
+  RIGHT: 'D',
+  LEFT: 'I'
 }
