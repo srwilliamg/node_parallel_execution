@@ -6,7 +6,14 @@ Constants.directions = {
   NORTH: 'N',
   SOUTH: 'S',
   EAST: 'E',
-  WEST: 'W'
+  WEST: 'W',
+  OUTPUT : {
+    NORTH: 'Norte',
+    SOUTH: 'Sur',
+    EAST: 'Este',
+    WEST: 'Oeste',
+    SEPARATOR: '-------------------------------\n'
+  }
 }
 
 Constants.movement = {

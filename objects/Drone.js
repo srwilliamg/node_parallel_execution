@@ -1,6 +1,7 @@
-const DIRECTIONS = require('./Utils/Constants').directions;
-const MOVEMENT = require('./Utils/Constants').movement;
+const DIRECTIONS = require('../utils/Constants').directions;
+const MOVEMENT = require('../utils/Constants').movement;
 const InstructionLoader = require('./InstructionsLoader');
+const CoordinatesLogger = require('./CoordinatesLogger');
 
 module.exports = class Drone {
   constructor(x, y, id) {
@@ -11,6 +12,7 @@ module.exports = class Drone {
     this.deliveryRoutes = null;
     this.actualDelivery = null;
     this.actualMove = null;
+    this.coordinatesLogger = new CoordinatesLogger();
   }
 
   async loadDeliveryRoutes() {
@@ -20,8 +22,26 @@ module.exports = class Drone {
     return routes;
   }
 
+  transformDirection(direction) {
+    if (direction == DIRECTIONS.NORTH) {
+      return DIRECTIONS.OUTPUT.NORTH;
+    }
+    else if (direction == DIRECTIONS.SOUTH) {
+      return DIRECTIONS.OUTPUT.SOUTH;
+    }
+    else if (direction == DIRECTIONS.EAST) {
+      return DIRECTIONS.OUTPUT.EAST;
+    }
+    else if (direction == DIRECTIONS.WEST) {
+      return DIRECTIONS.OUTPUT.WEST;
+    }
+
+    return 0;
+  }
+
   async stepForward() {
-    while (this.deliveryRoutes || this.deliveryRoutes.length > 0) {
+    while (this.deliveryRoutes != null && this.deliveryRoutes.length !== 0 || this.actualDelivery != null && this.actualDelivery.length !== 0) {
+
       if (this.actualDelivery == null || this.actualDelivery.length == 0) {
         this.actualDelivery = this.deliveryRoutes.shift().split('');
       }
@@ -47,14 +67,19 @@ module.exports = class Drone {
 
       this.actualMove = null;
 
-      if (this.actualDelivery == null || this.actualDelivery.length == 0) {
-        console.log("Position: ", this.x, this.y, this.direction);
-        if (this.deliveryRoutes == null || this.deliveryRoutes.length == 0) {
+      if (this.actualDelivery == null || this.actualDelivery.length === 0) {
+        const output = `(${this.x}, ${this.y}) direccion ${this.transformDirection(this.direction)}\n`;
+
+        console.log(output);
+        await this.coordinatesLogger.printCoordinates(this.id, output);
+
+        if (this.deliveryRoutes == null || this.deliveryRoutes.length === 0) {
           this.goBackHome();
-          break;
+          // break;
         }
       }
     }
+    await this.coordinatesLogger.printSeparator(this.id);
   }
 
   findDirection(actualMove) {
@@ -86,9 +111,9 @@ module.exports = class Drone {
 
       return true;
     }
-    else {
-      return false;
-    }
+
+    return false;
+
   }
 
   goBackHome() {

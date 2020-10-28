@@ -1,4 +1,4 @@
-const Drone = require('./Drone');
+const Drone = require('./objects/Drone');
 const config = require('./config/config.json');
 
 const amountOfDrones = [...Array(config.amountFiles)];

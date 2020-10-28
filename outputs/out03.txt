@@ -1,0 +1,40 @@
+(-2, 4) direccion Oeste
+(-1, 3) direccion Sur
+(0, -1) direccion Sur
+-------------------------------
+-------------------------------
+(-2, 4) direccion Oeste
+(-1, 3) direccion Sur
+(0, -1) direccion Sur
+-------------------------------
+(-2, 4) direccion Oeste
+(-1, 3) direccion Sur
+(0, -1) direccion Sur
+-------------------------------
+(-2, 4) direccion Oeste
+(-1, 3) direccion Sur
+(0, -1) direccion Sur
+-------------------------------
+(-2, 4) direccion Oeste
+(-1, 3) direccion Sur
+(0, -1) direccion Sur
+-------------------------------
+-------------------------------
+(-2, 4) direccion Oeste
+-------------------------------
+(-2, 4) direccion Oeste
+(-1, 3) direccion Sur
+(0, -1) direccion Sur
+-------------------------------
+(-2, 4) direccion Oeste
+(-1, 3) direccion Sur
+(0, -1) direccion Sur
+-------------------------------
+(-2, 4) direccion Oeste
+(-1, 3) direccion Sur
+(0, -1) direccion Sur
+-------------------------------
+(-2, 4) direccion Oeste
+(-1, 3) direccion Sur
+(0, -1) direccion Sur
+-------------------------------
