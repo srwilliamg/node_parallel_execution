@@ -2,13 +2,11 @@ const { amountFiles, endOfInstruction, amountOfOrders } = require('../config/con
 const FileManager = require('./FileManager');
 
 module.exports = class InstructionsLoader {
-  constructor() {
-    this.amountFiles = amountFiles;
-  }
+  constructor() {}
 
   getAllDeliveryRoutes() {
     try {
-      const files = [...Array(this.amountFiles)];
+      const files = [...Array(amountFiles)];
 
       return Promise.all(
         files.map(async (v, i) => await this.getDeliveryRoutes(i + 1))

@@ -1,17 +1,18 @@
 const Drone = require('./objects/Drone');
-const config = require('./config/config.json');
+const { amountFiles } = require('./config/config.json');
 
 class DroneController {
   constructor() {
     this.drones = null;
     this.deliveryRoutes = null;
-    this.amountOfDrones = [...Array(config.amountFiles)];
   }
 
   initDrones() {
-    this.drones = this.amountOfDrones.map((v, i) => {
-      return new Drone(0, 0, i + 1);
-    });
+    this.drones = [];
+
+    for (let i = 1; i <= amountFiles; i++) {
+      this.drones.push(new Drone(0, 0, i));
+    }
 
     this.loadDeliveryRoutes();
   }
