@@ -19,6 +19,7 @@ module.exports = class Drone {
     const il = new InstructionLoader();
     const routes = await il.getDeliveryRoutes(this.id);
     this.deliveryRoutes = routes;
+    await this.coordinatesLogger.printHeader(this.id);
     return routes;
   }
 
@@ -75,7 +76,6 @@ module.exports = class Drone {
 
         if (this.deliveryRoutes == null || this.deliveryRoutes.length === 0) {
           this.goBackHome();
-          // break;
         }
       }
     }

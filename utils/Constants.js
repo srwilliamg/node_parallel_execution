@@ -12,7 +12,8 @@ Constants.directions = {
     SOUTH: 'Sur',
     EAST: 'Este',
     WEST: 'Oeste',
-    SEPARATOR: '-------------------------------\n'
+    SEPARATOR: '--------------------------\n',
+    HEADER: '== Reporte de entregas ==\n'
   }
 }
 

@@ -1,7 +1,7 @@
 {
   "amountFiles": 3,
   "amountOfOrders": 3,
-  "inputRoute": "./inputs/",
+  "inputRoute": "./inputs3/",
   "outputRoute": "./outputs/",
   "endOfInstruction": "\n"
 }

@@ -1,40 +1,9 @@
+== Reporte de entregas ==
 (-2, 4) direccion Oeste
 (-1, 3) direccion Norte
 (-2, 6) direccion Este
--------------------------------
--------------------------------
-(-2, 4) direccion Oeste
-(-1, 3) direccion Norte
-(-2, 6) direccion Este
--------------------------------
-(-2, 4) direccion Oeste
-(-1, 3) direccion Norte
-(-2, 6) direccion Este
--------------------------------
-(-2, 4) direccion Oeste
-(-1, 3) direccion Norte
-(-2, 6) direccion Este
--------------------------------
-(-2, 4) direccion Oeste
-(-1, 3) direccion Norte
-(-2, 6) direccion Este
--------------------------------
--------------------------------
-(-2, 4) direccion Oeste
--------------------------------
-(-2, 4) direccion Oeste
-(-1, 3) direccion Norte
-(-2, 6) direccion Este
--------------------------------
-(-2, 4) direccion Oeste
-(-1, 3) direccion Norte
-(-2, 6) direccion Este
--------------------------------
-(-2, 4) direccion Oeste
-(-1, 3) direccion Norte
-(-2, 6) direccion Este
--------------------------------
-(-2, 4) direccion Oeste
-(-1, 3) direccion Norte
-(-2, 6) direccion Este
--------------------------------
+(0, 5) direccion Este
+(0, 7) direccion Norte
+(-2, 6) direccion Sur
+(-3, 4) direccion Sur
+--------------------------
