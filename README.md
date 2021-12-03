@@ -1,4 +1,4 @@
-# S4N Test
+# Node parallel execution
 
 - To run: 
 1. Install **npm** in your machine
